@@ -1,4 +1,4 @@
-# Roundcube-Plugin-Roundrive
+# Roundcube-Plugin-Roundrive for NextCloud
 
 This plugin is largely inspired by the plugin kolab_file
 It can be used to connect on a WebDAV storage (like ownCloud) from Roundcube
