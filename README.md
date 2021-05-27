@@ -1,13 +1,11 @@
 # Roundcube-Plugin-Roundrive for NextCloud
 
 This plugin is largely inspired by the plugin kolab_file
-It can be used to connect on a WebDAV storage (like ownCloud) from Roundcube
+It can be used to connect on a WebDAV storage (like NextCloud) from Roundcube
 You can add file from/to a mail on/from your storage
 
 This plugin use the flysystem lib (https://github.com/thephpleague/flysystem)
 It can be modify to use other storages like local storage, amazon, google, ...
-
-This is an alpha version, don't use it in production unless you are absolutely sure of what you do
 
 License
 -------
