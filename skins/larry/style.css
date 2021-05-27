@@ -433,3 +433,20 @@ table.propform td.source table.propform td {
 .auth-options label {
   vertical-align: middle;
 }
+
+.roundrive {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAASCAYAAAAzI3woAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuM4zml1AAAAJxSURBVEhLtZZtU1JREMf5wFkzMpnOZDba5IuswESU5DnkOQTNpEK4EggIEs+XC4YYNk3ZZ/h39shlEG4vysvO7HDucufsjz3/3YPmfy1erOCFL4xpgwUzRjvuG23QrlthCO0jW5fQf23yVu108XDLhbW3+8jUmyg02xC+VCH1LjlElsVWvDt44vCh++PnZMGOayLmTE7kGhL8iRSm1yy4ozPBc5hEXmxjI3yA1eAeoidFDjlrckC86E0Gqta54DD0+ciyzUHIdf4IDk/Lg2fZn7lDKLU7mN104PLqt/pQ82YX18aCxX0jcboqch0Nx2QnjcUKJax4dtQFEkpVLtZAIj2WNMuObzRGlXzpi/A1iX/R5kX9/Jt6UDr/LhewUiVSlcZY7OmbAJwfEnxNMKQpZzSuHhCBnIitscTkedZlU/rXit/Jnm+2sMS6rr/d7W1mw44E6xqlZP54CpuRqOJ3slN1aY/+drc32ozaWCnZvVdb/NiCQhrmdx95x9GQvMuqZtq9BqXqqgqkZUemJF7Zp/TXHWV7HwN1I8Wee8MIJTN8rfqR6QNM1LUmtAbrDZC/OVXnVDrjlVq0M1HninB9EtQDSpZrIKigcKwIsOTwDtYkcGp1mtr0TOvHNg/ErsoTe968zcVJv1hOLvtRqTZYGxmIPApWA+waYdWh4+xvo57RnTTH7qbK1/MxqGEgqhA9+1j3FVtneKCmmEeNLlVKQFdI6CjDNTIKRFM6VijzGN1jUu/75IDIGkwLC1Y319Tncp3f/BSnLsw1WhxkmU3qZVcQvV9Xk4UZtiSDIY1Q59EfM5rmVDESM03v/mv/aBrNH9e3GVa9tmbvAAAAAElFTkSuQmCC)
+    no-repeat
+    left center;
+}
+
+input.button, .buttongroup {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 2px 5px;
+    color: #525252;
+    border: 1px solid #c6c6c6;
+    border-radius: 4px;
+    background: #e6e6e6;
+    text-decoration: none;
+}
