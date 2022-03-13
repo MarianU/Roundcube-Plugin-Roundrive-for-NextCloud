@@ -30,9 +30,9 @@ window.rcmail && window.files_api && rcmail.addEventListener('init', function() 
     // mail compose
     if (rcmail.env.action == 'compose') {
       var elem = $('#compose-attachments > div'),
-        input = $('<input class="button" type="button">')
+        input = $('<button class="btn btn-secondary attach" type="button">')
           .attr('tabindex', $('input', elem).attr('tabindex') || 0)
-          .val(rcmail.gettext('roundrive.fromcloud'))
+          .text(rcmail.gettext('roundrive.fromcloud'))
           .click(function() { roundrive_selector_dialog(); })
           .appendTo(elem);
 

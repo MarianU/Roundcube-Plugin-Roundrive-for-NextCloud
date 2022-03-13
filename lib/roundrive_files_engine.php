@@ -56,25 +56,20 @@ class roundrive_files_engine
     /**
      * Class constructor
      */
-	
-	
     public function __construct($plugin)
     {
         $this->plugin  = $plugin;
         $this->rc      = $plugin->rc;
         $this->timeout = $this->rc->config->get('session_lifetime') * 60;
-		$u = $this->rc->user->get_username();
-		$d = $this->rc->config->get('rm_domain');
-		$format_u=str_replace($d,'',$u);
+
         $settings = array(
-                'userName' => $this->rc->user->get_username(),
-                'password' => $this->rc->get_user_password(),
-				'baseUri' =>  $this->rc->config->get('driver_webdav_url') . $format_u,
+		'baseUri' => $this->rc->config->get('driver_webdav_url'),
+                'userName' => $this->rc->config->get('driver_webdav_user'),// $this->rc->user->get_username(),
+                'password' => $this->rc->config->get('driver_webdav_password'),// $this->rc->get_user_password(),
         );
-		//$log = date('Y-m-d H:i:s') . ' ' . print_r($settings, true);
-	    //file_put_contents(__DIR__ . '/log.txt', $log . PHP_EOL, FILE_APPEND);
+
         $client = new Client($settings);
-        $adapter = new WebDAVAdapter($client, $this->rc->config->get('driver_webdav_prefix'). $format_u);
+        $adapter = new WebDAVAdapter($client, $this->rc->config->get('driver_webdav_prefix'));
         $this->filesystem = new Filesystem($adapter);
     }
 
@@ -136,7 +131,8 @@ class roundrive_files_engine
         if (empty($_REQUEST['framed']) && $this->rc->config->get('show_drive_task', true)) {
             $this->plugin->add_button(array(
                 'command'    => 'roundrive',
-                'class'      => 'button-files',
+		'class'      => 'button-files',
+		'type'       => 'link',
                 'classsel'   => 'button-files button-selected',
                 'innerclass' => 'button-inner',
                 'label'      => 'roundrive.files',
@@ -941,7 +937,7 @@ class roundrive_files_engine
                     'html'      => $content,
                     'name'      => $attachment['name'],
                     'mimetype'  => $attachment['mimetype'],
-                    
+                    'classname' => rcmail_filetype2classname($attachment['mimetype'], $attachment['name']),
                     'complete'  => true), $uploadid);
             }
             else if ($attachment['error']) {
@@ -985,7 +981,7 @@ class roundrive_files_engine
       }
       catch (Exception $e) {
         $result['status'] = 'NOK';
-        $result['reason'] = "Can't liste folders";
+        $result['reason'] = "Can't list folders";
       }
       echo json_encode($result);
       exit;
